@@ -11,6 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140405223309) do
+
+  create_table "oversight_regions", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "oversight_regions", ["name"], name: "index_oversight_regions_on_name", unique: true
 
 end
