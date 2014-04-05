@@ -3,6 +3,9 @@ module Oversight
     extend ActiveSupport::Concern
 
     included do
+      has_many :employments
+      has_many :users, through: :employments
+
       belongs_to :region
 
       validates :region, :name, presence: true

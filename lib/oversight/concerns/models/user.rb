@@ -3,6 +3,9 @@ module Oversight
     extend ActiveSupport::Concern
 
     included do
+      has_many :employments
+      has_many :stores, through: :employments
+
       validates :first_name, :last_name, presence: true
       validates :phone, :email, uniqueness: true
 
