@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140405225053) do
+ActiveRecord::Schema.define(version: 20140405232903) do
+
+  create_table "oversight_employment_roles", force: true do |t|
+    t.string   "key",        null: false
+    t.string   "title",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "oversight_employment_roles", ["key"], name: "index_oversight_employment_roles_on_key", unique: true
+  add_index "oversight_employment_roles", ["title"], name: "index_oversight_employment_roles_on_title", unique: true
 
   create_table "oversight_regions", force: true do |t|
     t.string   "name",       null: false
@@ -29,5 +39,18 @@ ActiveRecord::Schema.define(version: 20140405225053) do
   end
 
   add_index "oversight_stores", ["region_id"], name: "index_oversight_stores_on_region_id"
+
+  create_table "oversight_users", force: true do |t|
+    t.string   "first_name",   null: false
+    t.string   "middle_names"
+    t.string   "last_name",    null: false
+    t.string   "phone"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "oversight_users", ["email"], name: "index_oversight_users_on_email", unique: true
+  add_index "oversight_users", ["phone"], name: "index_oversight_users_on_phone", unique: true
 
 end
