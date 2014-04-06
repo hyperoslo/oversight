@@ -5,6 +5,7 @@ module Oversight
     included do
       belongs_to :user
       belongs_to :store
+      belongs_to :employment_role
 
       validates :user, :store, presence: true
     end

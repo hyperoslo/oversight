@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140405234854) do
+ActiveRecord::Schema.define(version: 20140406000605) do
 
   create_table "oversight_employment_roles", force: true do |t|
     t.string   "key",        null: false
@@ -28,8 +28,10 @@ ActiveRecord::Schema.define(version: 20140405234854) do
     t.integer  "store_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "employment_role_id"
   end
 
+  add_index "oversight_employments", ["employment_role_id"], name: "index_oversight_employments_on_employment_role_id"
   add_index "oversight_employments", ["store_id"], name: "index_oversight_employments_on_store_id"
   add_index "oversight_employments", ["user_id"], name: "index_oversight_employments_on_user_id"
 
