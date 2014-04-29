@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406000605) do
+ActiveRecord::Schema.define(version: 20140429101953) do
 
   create_table "oversight_employment_roles", force: true do |t|
     t.string   "key",        null: false
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20140406000605) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active"
   end
 
   add_index "oversight_users", ["email"], name: "index_oversight_users_on_email", unique: true
