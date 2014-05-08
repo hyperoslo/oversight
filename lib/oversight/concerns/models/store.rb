@@ -3,7 +3,7 @@ module Oversight
     extend ActiveSupport::Concern
 
     included do
-      has_many :employments
+      has_many :employments, dependent: :destroy
       has_many :users, through: :employments
 
       belongs_to :region
