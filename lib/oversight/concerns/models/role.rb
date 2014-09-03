@@ -1,9 +1,9 @@
 module Oversight
-  module Concerns::Models::EmploymentRole
+  module Concerns::Models::Role
     extend ActiveSupport::Concern
 
     included do
-      has_many :employments
+      has_many :memberships
 
       validates :key, :title, presence: true, uniqueness: true
     end

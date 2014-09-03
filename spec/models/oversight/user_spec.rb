@@ -2,6 +2,16 @@ require 'spec_helper'
 
 module Oversight
   describe User do
+    describe "associations" do
+      let!(:user)       { create :oversight_user }
+      let!(:team)       { create :oversight_team }
+      let!(:membership) { create :oversight_membership, user: user, team: team }
+
+      it "has belongs to teams" do
+        expect(user.teams.first).to eq team
+      end
+    end
+
     describe "::active" do
       before { create_list :oversight_user, 10, :inactive }
       let(:active_users) { create_list :oversight_user, 5, :active }

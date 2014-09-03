@@ -1,10 +1,10 @@
 module Oversight
-  module Concerns::Models::Store
+  module Concerns::Models::Team
     extend ActiveSupport::Concern
 
     included do
-      has_many :employments, dependent: :destroy
-      has_many :users, through: :employments
+      has_many :memberships, dependent: :destroy
+      has_many :users, through: :memberships
 
       belongs_to :region
 
