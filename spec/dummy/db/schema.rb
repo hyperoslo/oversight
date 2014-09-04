@@ -11,29 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429101953) do
+ActiveRecord::Schema.define(version: 20140903141712) do
 
-  create_table "oversight_employment_roles", force: true do |t|
-    t.string   "key",        null: false
-    t.string   "title",      null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "oversight_employment_roles", ["key"], name: "index_oversight_employment_roles_on_key", unique: true
-  add_index "oversight_employment_roles", ["title"], name: "index_oversight_employment_roles_on_title", unique: true
-
-  create_table "oversight_employments", force: true do |t|
+  create_table "oversight_memberships", force: true do |t|
     t.integer  "user_id"
-    t.integer  "store_id"
+    t.integer  "team_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "employment_role_id"
+    t.integer  "role_id"
   end
 
-  add_index "oversight_employments", ["employment_role_id"], name: "index_oversight_employments_on_employment_role_id"
-  add_index "oversight_employments", ["store_id"], name: "index_oversight_employments_on_store_id"
-  add_index "oversight_employments", ["user_id"], name: "index_oversight_employments_on_user_id"
+  add_index "oversight_memberships", ["role_id"], name: "index_oversight_memberships_on_role_id"
+  add_index "oversight_memberships", ["team_id"], name: "index_oversight_memberships_on_team_id"
+  add_index "oversight_memberships", ["user_id"], name: "index_oversight_memberships_on_user_id"
 
   create_table "oversight_regions", force: true do |t|
     t.string   "name",       null: false
@@ -43,14 +33,24 @@ ActiveRecord::Schema.define(version: 20140429101953) do
 
   add_index "oversight_regions", ["name"], name: "index_oversight_regions_on_name", unique: true
 
-  create_table "oversight_stores", force: true do |t|
+  create_table "oversight_roles", force: true do |t|
+    t.string   "key",        null: false
+    t.string   "title",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "oversight_roles", ["key"], name: "index_oversight_roles_on_key", unique: true
+  add_index "oversight_roles", ["title"], name: "index_oversight_roles_on_title", unique: true
+
+  create_table "oversight_teams", force: true do |t|
     t.integer  "region_id"
     t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "oversight_stores", ["region_id"], name: "index_oversight_stores_on_region_id"
+  add_index "oversight_teams", ["region_id"], name: "index_oversight_teams_on_region_id"
 
   create_table "oversight_users", force: true do |t|
     t.string   "first_name",   null: false

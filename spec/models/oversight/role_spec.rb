@@ -1,6 +1,6 @@
 require 'spec_helper'
 
 module Oversight
-  describe EmploymentRole do
+  describe Role do
   end
 end

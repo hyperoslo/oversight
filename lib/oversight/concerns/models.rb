@@ -1,7 +1,7 @@
 module Oversight::Concerns::Models
-  require 'oversight/concerns/models/employment'
-  require 'oversight/concerns/models/employment_role'
+  require 'oversight/concerns/models/membership'
+  require 'oversight/concerns/models/role'
   require 'oversight/concerns/models/region'
-  require 'oversight/concerns/models/store'
+  require 'oversight/concerns/models/team'
   require 'oversight/concerns/models/user'
 end
