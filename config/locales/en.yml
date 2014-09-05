@@ -27,36 +27,36 @@ en:
         created_at: Created at
         updated_at: Updated at
 
-        oversight/membership:
-          <<: *common
-          role: Role
-          team: Team
-          user: User
+      oversight/membership:
+        <<: *common
+        role: Role
+        team: Team
+        user: User
 
-        oversight/region:
-          <<: *common
-          name: Name
+      oversight/region:
+        <<: *common
+        name: Name
 
-        oversight/role:
-          <<: *common
-          key: Unique identifier
-          memberships: Memberships
-          title: Title
+      oversight/role:
+        <<: *common
+        key: Unique identifier
+        memberships: Memberships
+        title: Title
 
-        oversight/team:
-          <<: *common
-          memberships: Memberships
-          name: Name
-          region: Region
-          users: Users
+      oversight/team:
+        <<: *common
+        memberships: Memberships
+        name: Name
+        region: Region
+        users: Users
 
-        oversight/user:
-          <<: *common
-          actuve: Active
-          email: E-mail address
-          first_name: First name
-          last_name: Last name
-          memberships: Memberships
-          middle_names: Middle names
-          phone: Phone number
-          teams: Teams
+      oversight/user:
+        <<: *common
+        actuve: Active
+        email: E-mail address
+        first_name: First name
+        last_name: Last name
+        memberships: Memberships
+        middle_names: Middle names
+        phone: Phone number
+        teams: Teams
