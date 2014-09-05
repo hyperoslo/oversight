@@ -1,0 +1,62 @@
+nb:
+  activerecord:
+    models:
+      oversight/membership:
+        one: Medlemskap
+        other: Medlemskap
+
+      oversight/region:
+        one: Region
+        other: Regioner
+
+      oversight/role:
+        one: Brukerrolle
+        other: Brukerroller
+
+      oversight/team:
+        one: Lag
+        other: Lag
+
+      oversight/user:
+        one: Bruker
+        other: Bruker
+
+    attributes:
+      common: &common
+        id: ID
+        created_at: Opprettelsestidspunkt
+        updated_at: Oppdateringstidspunkt
+
+        oversight/membership:
+          <<: *common
+          role: Rolle
+          team: Lag
+          user: Bruker
+
+        oversight/region:
+          <<: *common
+          name: Navn
+
+        oversight/role:
+          <<: *common
+          key: Unik nøkkel
+          memberships: Medlemskap
+          title: Tittel
+
+        oversight/team:
+          <<: *common
+          memberships: Medlemskap
+          name: Navn
+          region: Region
+          users: Brukere
+
+        oversight/user:
+          <<: *common
+          actuve: Aktiv
+          email: E-postadresse
+          first_name: Fornavn
+          last_name: Etternavn
+          memberships: Medlemskap
+          middle_names: Mellomnavn
+          phone: Telefonnummer
+          teams: Lag
