@@ -1,0 +1,62 @@
+en:
+  activerecord:
+    models:
+      oversight/membership:
+        one: Membership
+        other: Memberships
+
+      oversight/region:
+        one: Region
+        other: Regions
+
+      oversight/role:
+        one: User role
+        other: User role
+
+      oversight/team:
+        one: Team
+        other: Teams
+
+      oversight/user:
+        one: User
+        other: Users
+
+    attributes:
+      common: &common
+        id: ID
+        created_at: Created at
+        updated_at: Updated at
+
+      oversight/membership:
+        <<: *common
+        role: Role
+        team: Team
+        user: User
+
+      oversight/region:
+        <<: *common
+        name: Name
+
+      oversight/role:
+        <<: *common
+        key: Unique identifier
+        memberships: Memberships
+        title: Title
+
+      oversight/team:
+        <<: *common
+        memberships: Memberships
+        name: Name
+        region: Region
+        users: Users
+
+      oversight/user:
+        <<: *common
+        actuve: Active
+        email: E-mail address
+        first_name: First name
+        last_name: Last name
+        memberships: Memberships
+        middle_names: Middle names
+        phone: Phone number
+        teams: Teams
