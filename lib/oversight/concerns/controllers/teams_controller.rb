@@ -15,6 +15,30 @@ module Oversight
     def show
     end
 
+    def edit
+    end
+
+    def update
+      if @team.update team_params
+        redirect_to update_redir_path
+      else
+        render :edit
+      end
+    end
+
+    protected
+
+    def team_params
+      params.require(:team).permit(
+        :name, :region_id,
+        memberships_attributes: [ :id, :user_id ]
+      )
+    end
+
+    def update_redir_path
+      @user ? url_for([ @user, @team ]) : url_for(@team)
+    end
+
     private
 
     def set_user
