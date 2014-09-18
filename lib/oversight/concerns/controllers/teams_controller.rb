@@ -31,7 +31,7 @@ module Oversight
     def team_params
       params.require(:team).permit(
         :name, :region_id,
-        memberships_attributes: [ :id, :user_id ]
+        memberships_attributes: [ :id, :user_id, :_destroy ]
       )
     end
 
