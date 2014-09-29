@@ -19,9 +19,9 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.0"
 
-  s.add_development_dependency "sqlite3"
-  s.add_development_dependency "pry-rails"
-  s.add_development_dependency "hirb-unicode"
-  s.add_development_dependency "rspec-rails"
-  s.add_development_dependency "factory_girl_rails"
+  s.add_development_dependency "sqlite3", '~> 1.3'
+  s.add_development_dependency "pry-rails", '~> 0.3'
+  s.add_development_dependency "hirb-unicode", '~> 0.0'
+  s.add_development_dependency "rspec-rails", '~> 2.14'
+  s.add_development_dependency "factory_girl_rails", '~> 4.4'
 end
