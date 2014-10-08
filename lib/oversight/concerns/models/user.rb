@@ -3,8 +3,8 @@ module Oversight
     extend ActiveSupport::Concern
 
     included do
-      has_many :memberships, dependent: :destroy
-      has_many :teams, through: :memberships
+      has_many :memberships, dependent: :destroy, inverse_of: :user
+      has_many :teams, through: :memberships, inverse_of: :users
 
       scope :active,   -> { where active: true }
       scope :inactive, -> { where active: false }
