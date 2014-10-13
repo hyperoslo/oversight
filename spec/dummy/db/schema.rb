@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140903141712) do
+ActiveRecord::Schema.define(version: 20141011215001) do
 
   create_table "oversight_memberships", force: true do |t|
     t.integer  "user_id"
@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(version: 20140903141712) do
   add_index "oversight_teams", ["region_id"], name: "index_oversight_teams_on_region_id"
 
   create_table "oversight_users", force: true do |t|
-    t.string   "first_name",   null: false
+    t.string   "first_name"
     t.string   "middle_names"
-    t.string   "last_name",    null: false
+    t.string   "last_name"
     t.string   "phone"
     t.string   "email"
     t.datetime "created_at"

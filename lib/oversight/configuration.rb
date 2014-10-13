@@ -1,10 +1,13 @@
 module Oversight
   class Configuration
-    attr_accessor :email_validation, :phone_validation
+    attr_accessor :first_name_validation, :last_name_validation,
+      :email_validation, :phone_validation
 
     def initialize
-      @email_validation = { presence: true, uniqueness: true }
-      @phone_validation = { presence: true, uniqueness: true }
+      @first_name_validation = { presence: true }
+      @last_name_validation  = { presence: true }
+      @email_validation      = { presence: true, uniqueness: true }
+      @phone_validation      = { presence: true, uniqueness: true }
     end
   end
 end
