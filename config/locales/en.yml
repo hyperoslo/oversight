@@ -11,7 +11,7 @@ en:
 
       oversight/role:
         one: User role
-        other: User role
+        other: User roles
 
       oversight/team:
         one: Team

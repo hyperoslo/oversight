@@ -19,7 +19,7 @@ nb:
 
       oversight/user:
         one: Bruker
-        other: Bruker
+        other: Brukere
 
     attributes:
       common: &common
