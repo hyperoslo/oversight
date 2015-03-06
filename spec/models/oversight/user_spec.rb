@@ -57,5 +57,28 @@ module Oversight
         end
       end
     end
+
+    describe "#in_team?" do
+      context "when the user is in the team" do
+        let(:user)        { create :oversight_user }
+        let(:team)        { create :oversight_team }
+
+        before { create :oversight_membership, user: user, team: team }
+
+        it "returns true" do
+          expect(user).to be_in_team team
+        end
+      end
+
+      context "when the user is not in the team" do
+        let(:user)        { create :oversight_user }
+
+        before { create :oversight_membership, user: user }
+
+        it "returns true" do
+          expect(user).not_to be_in_team create(:oversight_team)
+        end
+      end
+    end
   end
 end

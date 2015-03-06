@@ -17,6 +17,10 @@ module Oversight
       def name
         [first_name, middle_names, last_name].compact.join " "
       end
+
+      def in_team?(team)
+        teams.include? team
+      end
     end
   end
 end
